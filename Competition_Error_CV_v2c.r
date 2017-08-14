@@ -137,12 +137,14 @@ base.pcor.1 <- mean(base.pcor, na.rm = TRUE)
 base.fail.1 <- sum(base.fail, na.rm = TRUE)
  
 
-#model1, 2, and 3  
-#model 1 here is Base + inter-clone competition
-#model 2 here is Base + inter-clone + inter-plot competition
-#model 3 here is Base + inter-plot competition
+#model1, 2, and 3 demonstration
+#model 1 here is Base + inter-genotypic competition 
+#model 2 here is Base + inter-genotypic + competition error
+#model 3 here is Base + competition error
 
   for(m in c(1:length(test.geno))){
+    
+      # to demonstration inter-clonal competition
       distMat.2 <- distMat
       distMat.inv.2 <- 1/distMat.2
       distMat.inv.2[distMat.inv.2 == "Inf"] <- 0
